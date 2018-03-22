@@ -16,7 +16,7 @@ git clone https://github.com/penzin/MFWmin.git
 composer install
 ```
 
-3) Задать актуальные данные в конфиге:
+3) Задать актуальные данные в конфиге (если необходимо):
 
 файл */config/global.php* или создать переопределяющий его */config/local.php*
 
