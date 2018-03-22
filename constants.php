@@ -42,7 +42,7 @@ define("APP_JSON_CONFIG_FILE_NAME", ROOT_DIR . DS . "app_config.json");
 define("SESSION_REFERER_NAME", "");
 
 //представления
-define("VIEW_DEFAULT_TITLE", "Тестовое приложение MFW");
+define("VIEW_DEFAULT_TITLE", "Минимальное приложение MFW");
 //define("VIEW_DEFAULT_KEYWORDS", "MFW");
 define("VIEW_DEFAULT_AUTHOR", "");
 define("VIEW_DEFAULT_COPYRIGHT", "");
@@ -55,5 +55,5 @@ define("VIEW_DEFAULT_GENERATOR", "");
 define("VIEW_DEFAULT_FAVICON", "");
 define("VIEW_DEFAULT_ITEMS_PER_PAGE", 10);
 
-//шаблон страницы 404
+//Дефолтный шаблон страницы 404
 define("PAGE_DEFAULT_404", "error_404");

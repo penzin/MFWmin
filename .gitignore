@@ -9,3 +9,4 @@
 /www/uploads/
 /Modules/**/*.json
 composer.phar
+app_config.json

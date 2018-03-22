@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Минимальное приложение MFW
+ */
+
 //режим работы из консоли
 if (isset($_SERVER['argv'][1]) && $_SERVER['argv'][1] == "cli") {
     define("CLI", true);
@@ -62,6 +66,6 @@ try {
             echo FW\DisplayException::show($e);
         }
         else {
-            echo "Страница не найдена";
+            die("Page not found");
         }
     }

@@ -5,7 +5,7 @@ namespace Modules\Application\Model;
 use FW\Model;
 
 /**
- * Модель для работы
+ * Модель для работы (дефолтная)
  * 
  */
 class application extends Model
