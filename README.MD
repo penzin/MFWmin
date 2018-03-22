@@ -1,19 +1,22 @@
-# MFWmin (Минимальное приложение на базе фреймворка MFW v1.)
+# MFWmin
+### Минимальное приложение на базе фреймворка MFW v1.
+
+Разработчики:
+[Roman V. Penzin](penzin.r.v@gmail.com), [fedyak](fedyak.82@gmail.com)
 
 Установка
 -
-1) Склонировать репозиторий на сервер с предустановленными php >= 5.6
+1) Склонировать репозиторий на сервер с предустановленным php >= 5.6
 ```
 git clone https://github.com/penzin/MFWmin.git
 ```
 
-2) Установить Composer и выполнить инициализацию
-[Установка]https://getcomposer.org/download/
+2) [Установить Composer](https://getcomposer.org/download/) и выполнить инициализацию
 ```
 composer install
 ```
 
-3) Задать актуальные занные в конфиге:
+3) Задать актуальные данные в конфиге:
 файл /config/global.php или создать переопределяющий его /config/local.php
 
 
