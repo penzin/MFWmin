@@ -2,7 +2,7 @@
 Минимальное приложение на базе фреймворка MFW v1.
 
 Разработчики:
-[Roman V. Penzin](mailto:penzin.r.v@gmail.com), [Fedyak](mailto:fedyak.82@gmail.com) .
+[Roman V. Penzin](mailto:penzin.r.v@gmail.com), [Fedyak](mailto:fedyak.82@gmail.com) ([Madbas team](http://madbas.ru)).
 
 Установка
 -
