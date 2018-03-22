@@ -1,0 +1,19 @@
+<?php
+
+//$this->getView()->setFavicon('/img/favicon.png');
+
+?>
+<head>
+    <title><?= $this->getView()->getTitle() ?></title>
+    <?= $this->getView()->getMetaContentTypeTag() ?>
+    <meta name="viewport" content="width=device-width">
+    <?= $this->getView()->getMetaRobotsTag() ?>
+    <?= $this->getView()->getFaviconTag() ?>
+    <?= $this->getView()->getMetaAuthorTag() ?>
+    <?= $this->getView()->getMetaCopyrightTag() ?>
+    <?= $this->getView()->getMetaKeywordsTag() ?>
+    <?= $this->getView()->getMetaDescriptionTag() ?>    
+    <?= $this->getView()->getScripts() ?>
+    <?= $this->getView()->getCSS() ?>
+    <?= $this->getView()->getCanonical() ?>
+</head>

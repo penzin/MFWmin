@@ -1,0 +1,107 @@
+//щелчок на кнопке "удалить"
+$('.btn-delete').click(function(e) {
+    var row    = $(this).parent().parent().parent(),
+        id     = row.data('id');
+
+        $.confirm({
+            title: 'Подтвердите удаление!',
+            content: 'Вся информация об объекте (включая вложенные объекты) будет удалена!',
+            confirmButton: 'Да',
+            cancelButton: 'Отмена',            
+
+            confirm: function() {
+                $.post(':uri' + id + '/delete/:query', {}, function(r) {
+                    //ошибка
+                    if (r.result == 'error') {
+                        return Notify.error(r.message);
+                    }
+                    
+                    //редирект
+                    if (r.result == 'redirect') {
+                        //если задан адрес редиректа - переходим на него                        
+                        if (r.data.redirect !== undefined && r.data.redirect != '') {
+                            window.location = r.data.redirect;
+                        }
+                        //иначе перегружаем текущую страницу
+                        else {
+                            location.reload();
+                        }                       
+                    }                
+                    if (r.result == 'ok') {
+                        row.remove();                        
+                    }
+                }, 'json');
+            },
+        });
+    });
+
+
+//щелчок на кнопке "редактировать"
+$('.btn-edit').click(function(e) {
+    var id = $(this).parent().parent().parent().data('id');
+
+    window.location = ':uri' + id + '/edit/:query';
+});
+
+
+//снятие / установка всех флажков
+$('input[name=cb_select_all_rows]').change(function(){
+    if ($(this).is(":checked")) {
+        $(this).parents('table')
+               .find('input[type=checkbox].cb_selected_id').each(function(i, e){
+                   $(e).prop('checked', true);
+               });
+    } 
+    else {
+        $(this).parents('table')
+               .find('input[type=checkbox].cb_selected_id').each(function(i, e){
+                   $(e).prop('checked', false);
+               });
+    }
+});
+
+
+//щелчок на кнопке "Применить выбранное групповое действие"
+$('.btn-do-action').click(function(e) {
+    e.preventDefault();
+    
+    var action_txt = $(this).prev().find("option:selected").text();
+    var action = $(this).prev().val();
+
+    $.confirm({
+            title: 'Подтвердите действие!',
+            content: 'Вы действительно хотите применить действие "' + action_txt + '" к выделенным объектам?',
+            confirmButton: 'Да',
+            cancelButton: 'Отмена',            
+
+            confirm: function() {
+                //window.location = ':urigroup_action/:query?action=' + action;
+                $.post(':urigroup_action/:query', $("#grid_view_frm").serialize(), function(r) {
+                    //ошибка
+                    if (r.result == 'error') {
+                        return Notify.error(r.message);
+                    }
+                    
+                    //редирект
+                    if (r.result == 'redirect') {
+                        //если задан адрес редиректа - переходим на него                        
+                        if (r.data.redirect !== undefined && r.data.redirect != '') {
+                            window.location = r.data.redirect;
+                        }
+                        //иначе перегружаем текущую страницу
+                        else {
+                            location.reload();
+                        }                       
+                    }
+                    else {
+                        //успешное сообщение
+                        return Notify.success(r.message);
+                    }
+                }, 'json');
+            },
+        });    
+    
+    
+    //action = 'test';
+    //
+});

@@ -1,0 +1,21 @@
+<script>
+    $('#<?= $id ?>').click(function(e) {
+        var self = $(this);
+        
+        $.confirm({
+            title: 'Подтвердите удаление',
+            content: '',
+            confirmButton: 'Да',
+            cancelButton: 'Отмена',
+            confirm: function() {
+                $.post('<?= $uri ?>', {}, function(r) {
+                    if (r.result != 'ok') {
+                        Notify.error(r.message);
+                        return;
+                    }
+                    self.parent('.form-img').remove();
+                }, 'json');
+            },
+        });
+    });
+</script>

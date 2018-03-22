@@ -1,0 +1,11 @@
+/nbproject/
+/config/local.php
+/vendor/
+/www/log/
+/logs/
+/node_modules/
+/bower_components/
+/gulp/node_modules/
+/www/uploads/
+/Modules/**/*.json
+composer.phar

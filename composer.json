@@ -1,0 +1,12 @@
+{
+    "require": {        
+        "greenlion/php-sql-parser": "^4.1",
+        "phpmailer/phpmailer": "~5.2"
+    },   
+    "config": {
+
+    },
+    "autoload": {
+        "psr-4": {"FW\\": "FW/", "Modules\\" : "Modules/", "Traits\\" : "Traits/", "Widgets\\" : "Widgets/"}
+    }
+}
